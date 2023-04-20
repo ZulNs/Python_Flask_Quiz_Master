@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <!--meta http-equiv="refresh" content="1;url="-->
+  <title>Quiz Master - {{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="ZulNs">
+  <meta name="keywords" content="quiz">
+  <meta name="description" content="Quiz Master">
+  <meta name="robots" content="all">
+  <meta name="copyright" content="ZulNs">
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/static/w3css/w3.css">
+  <link rel="stylesheet" href="/static/fontawesome/css/fontawesome.css">
+  <link rel="stylesheet" href="/static/fontawesome/css/solid.css">
+  {% block header %}{% endblock %}
+</head>
+<body>
+  {% block content %}{% endblock %}
+  <script type="text/javascript" src="/static/socketio.client-dist/socket.io.js"></script>
+  {% block script %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,50 @@
+.bg-header {
+	background: repeating-linear-gradient(45deg, #009688, #009688 5%, #008577 5%, #008577 10%);
+	background-size: 800px 800px;
+	animation: move-it 6s linear infinite;
+}
+
+@keyframes move-it {
+  0% {
+    background-position: 800px 0px;
+  }
+  100% {
+    background-position: 0px 0px;
+  }
+}
+
+.bg-highlight {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 400% 100%;
+  background-image: linear-gradient(90deg, #999 0%, #555 20%, #999 40%, #555 60%, #999 80%, #555 100%);
+  -webkit-animation: AnimateBG 2s linear infinite alternate;
+      animation: AnimateBG 2s linear infinite alternate;
+}
+
+@-webkit-keyframes AnimateBG {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+@keyframes AnimateBG {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}

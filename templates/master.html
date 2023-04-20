@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block header %}
+  <link rel="stylesheet" href="/static/master.css">
+{% endblock %}
+
+{% block content %}
+  <header class="w3-container w3-padding w3-teal bg-header">
+    <div class="w3-center">
+      <div class='ripple-background'>
+        <div class="w3-xxxlarge">Juri</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="w3-container w3-black">
+    <div class="w3-row w3-padding-16">
+      {% for i in range(5) %}
+        <div class="w3-col m2">
+          <input id="{{ elmId[i] }}" class="w3-radio" type="radio" name="stage" value="0" onclick="changeStage({{ numch[i] }})" checked>
+          <label for="{{ elmId[i] }}">{{ stage[i] }}</label>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-center w3-margin-top">
+    {% for i in range(4) %}
+      <div class="w3-quarter">
+        <div id="team_{{ lcase[i] }}" class="w3-card w3-display-container w3-text-{{ color[i] }} w3-hide" style="min-height:400px">
+          <div class="w3-display-topmiddle">
+            <div class="w3-xxlarge">Regu&nbsp;{{ ucase[i] }}</div>
+        </div>
+          <div class="w3-display-middle">
+            <div id="select_{{ lcase[i] }}" class="w3-section">
+              <input id="select_chk_{{ lcase[i] }}" class="w3-check" type="checkbox" onclick="selectTeam({{ numch[i] }})">
+              <label for="select_chk_{{ lcase[i] }}">Pilih</label>
+            </div>
+            <div id="answer_{{ lcase[i] }}" class="w3-cell-row w3-disabled">
+              <div class="w3-cell-middle">Jawaban&nbsp;&nbsp;</div>
+              <div class="w3-cell">
+                <input id="ans_right_{{ lcase[i] }}" class="w3-check" type="checkbox" onclick="markAnswer({{ numch[i] }}, true)">
+                <label class="w3-text-green" for="ans_right_{{ lcase[i] }}">Benar</label><br>
+                <input id="ans_wrong_{{ lcase[i] }}" class="w3-check" type="checkbox" onclick="markAnswer({{ numch[i] }}, false)">
+                <label class="w3-text-red" for="ans_wrong_{{ lcase[i] }}">Salah</label>
+              </div>
+            </div>
+            <div class="w3-disabled" id="score_{{ lcase[i] }}">
+              <div class="w3-section">
+                <label for="score_val_{{ lcase[i] }}">Score</label>
+                <input id="score_val_{{ lcase[i] }}" class="w3-input w3-border" type="number" min="-100" max="100" step="5">
+              </div>
+              <button onclick="updateScore({{ numch[i] }})">Update&nbsp;Score</button>
+            </div>
+          </div>
+          <div class="w3-display-bottommiddle">
+            <div class="w3-xxlarge"><span>Score&nbsp;</span><span id="score_tot_{{ lcase[i] }}">0</span></div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
+
+{% block script %}
+  <script type="text/javascript" src="/static/master.js"></script>
+{% endblock %}

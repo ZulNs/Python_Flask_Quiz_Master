@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block header %}
+  <link rel="stylesheet" href="/static/display.css">
+{% endblock %}
+
+{% block content %}
+  <header class="w3-container w3-padding w3-teal bg-header">
+    <div class="w3-center">
+      <div class="ripple-background">
+        <div class="w3-xlarge">Cerdas Cermat<br>Semarak Ramadhan 1444H<br>Remaja Masjid Nurul-Falah Hutuo</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="w3-container w3-center w3-black">
+    <div id="stage" class="w3-xxlarge"></div>
+  </div>
+
+  <div class="w3-row-padding w3-center w3-margin-top">
+    {% for i in range(4) %}
+      <div class="w3-quarter">
+        <div id="team_{{ lcase[i] }}" class="w3-card w3-display-container w3-text-{{ color[i] }} w3-hide" style="min-height:392px">
+          <div class="w3-display-topmiddle">
+            <div class="w3-xxlarge">Regu</div>
+            <div style="font-size:96px">{{ ucase[i] }}</div>
+          </div>
+          <div class="w3-display-middle">
+            <i id="mark_{{ lcase[i] }}" style="font-size:120px"></i>
+          </div>
+          <div class="w3-display-bottommiddle">
+            <div class="w3-xxlarge">Score</div>
+            <div id="score_tot_{{ lcase[i] }}" class="w3-xxxlarge">0</div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
+
+{% block script %}
+  <script type="text/javascript" src="/static/display.js"></script>
+{% endblock %}
